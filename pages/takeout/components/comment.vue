@@ -1,0 +1,155 @@
+<template>
+	<view class="message-view">
+		<!-- 分类 -->
+		<view v-if="emptyList">
+			<view class="menu-block">
+				<block v-for="(item,index) in leavetap" :key="index">
+					<view :class="{activetext:index==activeTap}" @click="mebuBtn(index,item)">{{item}}</view>
+				</block>
+			</view>
+			<!-- 评价 -->
+
+			<view class="message-dist" v-for="(item,index) in leavedata" :key="index">
+				<view class="users-message">
+					<view class="cont-name">
+						<image :src="item.avatarUrl" mode="widthFix"></image>
+						<text>{{item.nickName}}</text>
+					</view>
+					<!-- 时间 -->
+					<view class="message-time">
+						{{item.time}}
+					</view>
+				</view>
+				<view class="cont-name-text">
+					<text>{{item.usermess}}</text>
+				</view>
+			</view>
+
+		</view>
+		<!-- 评论为空 -->
+		<view v-else class="claenpty">该商家还没有商品评论哦!</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		props: {
+			commentdata: Array,
+			leavetap: Array,
+			emptyList: Boolean
+		},
+		data() {
+			return {
+				leavedata: [],
+				activeTap: 0
+			}
+		},
+		methods: {
+			mebuBtn(index, item) {
+				this.activeTap = index
+				this.$parent.classiComment(item)
+			}
+		},
+		watch: {
+			// 通过watch对得到的数据改变
+			commentdata(newValue, oldValue) {
+				let leavedata = newValue.map(item => {
+					return item.messagedata
+				})
+				this.leavedata = leavedata
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.message-view {
+		margin: 0 20upx 100upx 20upx;
+
+		.menu-block {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+
+			/* margin-bottom: 20upx; */
+			view {
+				background: #ffffff;
+				border: 1px solid #c2c5cc;
+				border-radius: 6upx;
+				font-size: 25upx;
+				color: #292c33;
+				font-weight: bold;
+				text-align: center;
+				padding: 15upx;
+				margin: 10upx 15upx 5upx 0;
+			}
+		}
+
+		.message-dist {
+			margin-top: 30upx;
+			border-bottom: 1rpx solid #f8f8f8;
+			padding-bottom: 25upx;
+
+			/* 评价 */
+			.users-message {
+				display: flex;
+				justify-content: space-between;
+				height: 50upx;
+				align-items: center;
+				margin-bottom: 15upx;
+
+				.cont-name {
+					display: flex;
+					align-items: center;
+					height: 50upx;
+
+					text {
+						font-size: 30upx;
+						color: #a8a8a8;
+					}
+
+					image {
+						width: 50upx !important;
+						height: 50upx !important;
+						border-radius: 50%;
+						margin-right: 9upx;
+					}
+				}
+
+				.message-time {
+					font-size: 25upx;
+					color: #a8a8a8;
+				}
+			}
+
+			.cont-name-text {
+				text {
+					font-size: 27upx;
+					color: #333333;
+					line-height: 1.5;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+				}
+			}
+
+		}
+	}
+
+	.activetext {
+		color: #4CD964;
+		background: #ffdd00 !important;
+		border: 1px solid #ffdd00 !important;
+	}
+
+
+	/* 没有评价 */
+	.claenpty {
+		font-size: 30upx;
+		color: #cccccc;
+		text-align: center;
+		padding-top: 40upx;
+	}
+</style>

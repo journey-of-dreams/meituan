@@ -1,0 +1,11 @@
+{
+  "navigationBarTItleText": "下单",
+  "navigationBarBackgroundColor": "#ffd300",
+  "usingComponents": {
+    "business": "/pages/takeout/components/business",
+    "tabs": "/pages/takeout/components/tabs",
+    "ordering": "/pages/takeout/components/ordering",
+    "comment": "/pages/takeout/components/comment",
+    "introduce": "/pages/takeout/components/introduce"
+  }
+}

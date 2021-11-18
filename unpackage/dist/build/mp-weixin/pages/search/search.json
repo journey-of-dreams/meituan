@@ -1,0 +1,6 @@
+{
+  "navigationBarTItleText": "搜索",
+  "usingComponents": {
+    "empty": "/components/empty"
+  }
+}

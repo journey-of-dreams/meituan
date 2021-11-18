@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/index/components/search"],{"3de1":function(t,e,i){"use strict";i.r(e);var n=i("c013"),c=i("c7eb");for(var a in c)"default"!==a&&function(t){i.d(e,t,(function(){return c[t]}))}(a);i("eee5");var l,u=i("f0c5"),r=Object(u["a"])(c["default"],n["b"],n["c"],!1,null,"7fc838c3",null,!1,n["a"],l);e["default"]=r.exports},a094:function(t,e,i){"use strict";(function(t){Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var n={data:function(){return{curIndex:0,label:[[{img:i("b9cf"),title:"美食"},{img:i("93da"),title:"超市便利"},{img:i("f664"),title:"蔬菜水果"},{img:i("8cc9"),title:"美团专送"},{img:i("abec"),title:"跑腿代购"},{img:i("e6bb"),title:"夜宵"},{img:i("a19c"),title:"津贴联盟"},{img:i("0a6f"),title:"甜点饮品"},{img:i("749a"),title:"龙虾烧烤"},{img:i("d0e6"),title:"甜蜜蛋糕"}],[{img:i("78c1"),title:"汉堡披萨"},{img:i("7c34"),title:"日韩料理"},{img:i("1f76"),title:"麻辣烫"},{img:i("28e9"),title:"快食简餐"},{img:i("86e4"),title:"浪漫鲜花"},{img:i("de32"),title:"无辣不欢"},{img:i("56e6"),title:"饺子馆"},{img:i("740e"),title:"小吃馆"},{img:i("0f99"),title:"煲仔饭"},{img:i("036c"),title:"其他"}]]}},methods:{bannerIndex:function(t){this.curIndex=t.detail.current},search:function(){console.log("搜索"),t.navigateTo({url:"../search/search"})}}};e.default=n}).call(this,i("543d")["default"])},b1e1:function(t,e,i){},c013:function(t,e,i){"use strict";var n;i.d(e,"b",(function(){return c})),i.d(e,"c",(function(){return a})),i.d(e,"a",(function(){return n}));var c=function(){var t=this,e=t.$createElement;t._self._c},a=[]},c7eb:function(t,e,i){"use strict";i.r(e);var n=i("a094"),c=i.n(n);for(var a in n)"default"!==a&&function(t){i.d(e,t,(function(){return n[t]}))}(a);e["default"]=c.a},eee5:function(t,e,i){"use strict";var n=i("b1e1"),c=i.n(n);c.a}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'pages/index/components/search-create-component',
+    {
+        'pages/index/components/search-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('543d')['createComponent'](__webpack_require__("3de1"))
+        })
+    },
+    [['pages/index/components/search-create-component']]
+]);
